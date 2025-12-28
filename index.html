@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .div {
+            width: 50px;
+            height: 50px;
+            background-color: brown;
+            /* transition: all 1s ease-in-out; */
+            /* animation-name: changeBackground;
+            animation-duration: 4s;
+            animation-direction: alternate; */
+
+            animation: changeBackground 8s infinite alternate;
+
+        }
+
+        body {
+            position: relative;
+            height: 100vh;
+        }
+
+        .btn {
+
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+
+            background-color: brown;
+            position: absolute;
+
+            bottom: 20px;
+
+            left: 20px;
+        }
+
+        .btns {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: deeppink;
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            left: 0;
+
+        }
+
+        .btn:hover .btns:nth-child(1) {
+            animation: showBtns1 1s;
+        }
+
+        .btn:hover .btns:nth-child(2) {
+            animation: showBtns2 1s;
+            animation-delay: 0.5s;
+        }
+
+        .btn:hover .btns:nth-child(3) {
+            animation: showBtns3 1s;
+            animation-delay: 0.8s;
+        }
+
+
+        /* .btn:hover {
+            animation: ;
+        } */
+
+        /* div:hover {
+            width: 150px;
+            background-color: deeppink;
+        } */
+
+        @keyframes changeBackground {
+            0% {
+                background-color: brown;
+            }
+
+            25% {
+                background-color: rgb(0, 0, 0);
+                height: 150px;
+            }
+
+            50% {
+                background-color: rgb(255, 255, 255);
+                height: 100px;
+                width: 150px;
+            }
+
+            75% {
+                background-color: rgb(0, 247, 41);
+                height: 50px;
+                width: 100px;
+            }
+
+            100% {
+                background-color: deeppink;
+                height: 50px;
+                width: 50px;
+            }
+        }
+
+        @keyframes showBtns1 {
+            from {
+                top: 0;
+                left: 0;
+            }
+
+            to {
+                top: -40px;
+                left: 15px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes showBtns2 {
+            from {
+                top: 0;
+                left: 0;
+            }
+
+            to {
+                top: -20px;
+                left: 65px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes showBtns3 {
+            from {
+                top: 0;
+                left: 0;
+            }
+
+            to {
+                top: 25px;
+                left: 65px;
+                opacity: 1;
+            }
+        }
+
+        textarea{
+            resize: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div></div>
+
+    <form method="" action="" enctype="multipart/form-data">
+
+        <input type="hidden" value="1547" name="productId">
+
+        <label for="datemax">Enter a date before 1980-01-01:</label>
+        <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
+        <label for="datemin">Enter a date after 2000-01-01:</label>
+        <input type="date" id="datemin" name="datemin" min="2025-12-26" max="2025-12-29">
+        <input type="text" id="email" name="email">
+        <br>
+        <input type="file" id="myfile" name="myfile">
+        <input type="month" id="bdaymonth" name="bdaymonth">
+
+        <input type="number" id="quantity" name="quantity" min="1" max="100" step="10">
+
+        <br>
+        <input type="range" id="vol" name="vol" min="0" max="50">
+
+
+        <br>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+
+        <input type="time" id="appt" name="appt">
+
+        <input type="week" id="week" name="week">
+
+<textarea name="" id="" cols="30" rows="10" ></textarea>
+
+        <input type="submit" value="Save">
+
+    </form>
+
+    <div class="btn">
+        <div class="btns"></div>
+        <div class="btns"></div>
+        <div class="btns"></div>
+    </div>
+</body>
+
+</html>
